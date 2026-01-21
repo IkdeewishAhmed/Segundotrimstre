@@ -12,7 +12,7 @@ public class ejercicio7Ud2Realcion1 {
         int numeroTemporal = numeros.get(0);
         int numeroTemporal2 = numeros.get(2);
         numeroTemporal = numeros.set(2, numeroTemporal);
-        numeroTemporal2 = numeros.set(0, numeroTemporal);
+        numeroTemporal2 = numeros.set(0, numeroTemporal2);
 
         
 
