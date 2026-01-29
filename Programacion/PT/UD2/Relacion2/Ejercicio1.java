@@ -38,6 +38,12 @@ public class Ejercicio1 {
 
             if (opcion == 1) {
 
+                
+                System.out.print("Introduzca el nombre del libro: ");
+                String libroNuevo = scanner.nextLine();
+                libros.add(libroNuevo);
+                
+                
                 int cantidadLibroNuevo = -1;
                 do {
                     try {
@@ -53,10 +59,7 @@ public class Ejercicio1 {
                 }
                 } while (cantidadLibroNuevo < 0);
 
-                System.out.print("Introduzca el nombre del libro: ");
-                String libroNuevo = scanner.nextLine();
-                libros.add(libroNuevo);
-                
+
 
             } else if (opcion == 2) {
 
@@ -72,7 +75,6 @@ public class Ejercicio1 {
                     if (libros.get(i).equals(libroActualizado)) {
                         cantidades.set(i, cantidadLibroActualizado);
                         encontrado = true;
-                        break;
                     }
                 }
 
