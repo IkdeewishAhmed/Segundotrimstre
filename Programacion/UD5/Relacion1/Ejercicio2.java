@@ -1,4 +1,4 @@
-package Programacion.UD5.Relacion1;
+package UD5.Relacion1;
 
 public class Ejercicio2 {
     // Crea una clase CuentaBancaria con atributos titular y saldo. Agrega métodos

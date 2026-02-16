@@ -1,4 +1,4 @@
-package Programacion.UD5.Relacion1;
+package UD5.Relacion1;
 
 public class Ejercici4 {
     // Crea una clase Auto con atributos marca, modelo y velocidadActual. Agrega

@@ -1,4 +1,4 @@
-package Programacion.UD5.Relacion1;
+package UD5.Relacion1;
 
 public class Eercicio3 {
     // Crea una clase Alumno con atributos nombre, materia y calificacion. Agrega un

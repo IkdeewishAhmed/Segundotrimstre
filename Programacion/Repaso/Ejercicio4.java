@@ -1,4 +1,4 @@
-package Programacion.Repaso;
+package Repaso;
 
 import java.util.ArrayList;
 import java.util.Random;
