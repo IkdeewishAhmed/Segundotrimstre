@@ -34,19 +34,19 @@ class Auto {
     String modelo;
     double velocidadActual;
 
-    public Auto(String marca, String modelo) {
-        this.marca = marca;
-        this.modelo = modelo;
+    Auto(String marcas, String modelos) {
+        this.marca = marcas ;
+        this.modelo = modelos;
         this.velocidadActual = 0;
     }
 
-    public void acelerar(double cantidad) {
+    void acelerar(double cantidad) {
         if (cantidad > 0) {
             this.velocidadActual += cantidad;
         }
     }
 
-    public void frenar(double cantidad) {
+    void frenar(double cantidad) {
         if (cantidad > 0) {
             this.velocidadActual -= cantidad;
             if (this.velocidadActual < 0) {

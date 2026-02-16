@@ -41,8 +41,10 @@ class CuentaBancaria {
     }
 
    boolean retirar(double cantidad) {
-       if(cantidad<saldo){
-           saldo-=cantidad;
+       if(cantidad > 0 && cantidad <= saldo){
+           saldo -= cantidad;
+           return true;
        }
+       return false;
     }
 }

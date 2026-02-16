@@ -5,8 +5,8 @@ public class Ejercicio5 {
     // Crea una clase Termómetro con un atributo temperatura. Agrega el método
     // convertirAFahrenheit().
     public static void main(String[] args) {
-        Termómetro termómetro1 = new Termómetro(0);
-        Termómetro termómetro2 = new Termómetro(37);
+        Termometro termómetro1 = new Termometro(0);
+        Termometro termómetro2 = new Termometro(37);
 
         System.out.println("Temperatura en Celsius: " + termómetro1.temperatura + "°C, en Fahrenheit: "
                 + termómetro1.convertirAFahrenheit() + "°F");
@@ -17,15 +17,15 @@ public class Ejercicio5 {
 
 // ====================================CLASSES==========================================//
 
-class Termómetro {
+class Termometro {
 
     double temperatura;
 
-    public Termómetro(double temperatura) {
+    public Termometro(double temperatura) {
         this.temperatura = temperatura;
     }
 
-    public double convertirAFahrenheit() {
+   double convertirAFahrenheit() {
         return (this.temperatura * 9 / 5) + 32;
     }
 
