@@ -1,5 +1,7 @@
 package ProgramacionObject.Ejercicio2;
 
+import ProgramacionObject.Faker;
+
 public class Main {
     public static void main(String[] args) {
         bibilotica biblioteca = new bibilotica();
@@ -12,7 +14,7 @@ public class Main {
 
         final int NUMERO_DE_LIBROS = 100;
         for (int i = 0; i < NUMERO_DE_LIBROS; i++) {
-            libros libroAleatorio = new libros(Faker.id(), Faker.tituloLibro(), Faker.autor(), null, false);
+            libros libroAleatorio = new libros(FakerConciones.id(), FakerConciones.tituloLibro(), FakerConciones.autor(), null, false);
             biblioteca.agrergarLibro(libroAleatorio);
         }
         System.out.println("Libros disponibles en la biblioteca después de agregar 100 libros:"
