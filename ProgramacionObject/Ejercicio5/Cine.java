@@ -56,6 +56,10 @@ public class Cine {
         }
         return (double) totalDuracion / peliculas.size();
     }
+    public void duracionTotal() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'duracionTotal'");
+    }
 
     
 }

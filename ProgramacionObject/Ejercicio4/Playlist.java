@@ -18,16 +18,16 @@ public class Playlist {
             System.out.println("La playlist está vacía.");
         } else {
             System.out.println("\n--- MI PLAYLIST ---");
-            for (Conciones c : listaConciones) {
-                System.out.println(c);
+            for (Conciones canciones : listaConciones) {
+                System.out.println(canciones);
             }
         }
     }
 
     public void duracionTotal() {
         double total = 0;
-        for (Conciones c : listaConciones) {
-            total += c.getDuracion();
+        for (Conciones canciones : listaConciones) {
+            total += canciones.getDuracion();
         }
     
         int minutos = (int) total / 60;

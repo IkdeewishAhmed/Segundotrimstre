@@ -1,7 +1,5 @@
 package ProgramacionObject.Ejercicio2;
 
-import ProgramacionObject.Faker;
-
 public class Main {
     public static void main(String[] args) {
         bibilotica biblioteca = new bibilotica();

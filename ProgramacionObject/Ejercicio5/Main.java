@@ -32,20 +32,20 @@ public class Main {
 
             if (opcion == GENERAR) {
                 for (int i = 0; i < 100; i++) {
-                    ( Películas
+                    Películas pelicula = new Películas(
                             faker.generarTitulo(),
                             faker.generarDirector(),
-                            faker.generarSinopsis());
+                            faker.generarSinopsis(),
                             faker.generarDuracion());
-                    Películas.agregarPelicula(n);
+                    cine.agregarPelicula(pelicula);
                 }
                 System.out.println("¡100 canciones añadidas con éxito!");
 
             } else if (opcion == MOSTRAR) {
-                Películas.mostrarConciones();
+                cine.mostrarPeliculas();
 
             } else if (opcion == DURACION) {
-                Películas.duracionTotal();
+                cine.duracionTotal();
 
             } else if (opcion == SALIR) {
                 System.out.println("Cerrando reproductor...");
