@@ -49,10 +49,10 @@ public class Main {
         // Generar 1000 animales aleatorios
         for (int i = 0; i < 1000; i++) {
             Animal animal = new Animal(
-                    Faker.generarNombre(),
-                    Faker.generarCodigo(),
-                    Faker.generarCantidad(),
-                    Faker.generarPrecio());
+                    Faker. nombreAnimal(),
+                    Faker.codigoAnimal(),
+                    Faker.cantidadAnimal(),
+                    Faker.precioAnimal());
 
             zoo.agregarAnimal(animal);
         }
