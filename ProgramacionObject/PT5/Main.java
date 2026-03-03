@@ -2,6 +2,16 @@ package ProgramacionObject.PT5;
 
 import java.util.Scanner;
 
+/**
+ * Represents an Animal entity with its basic attributes and properties.
+ * 
+ * This class encapsulates information about an animal including its name, 
+ * identification code, quantity, and price. It provides getters and setters 
+ * for all attributes and a formatted string representation.
+ * 
+ * @author [AHMED IKDEEWISH]
+ * @version 1.0
+ */
 public class Main {
 
     /**
@@ -86,16 +96,19 @@ public class Main {
 
                 if (codigo.isEmpty()) {
                     System.out.println("El código no puede estar vacío.");
-                    continue;
+                  
+                }else {
+                    Animal animal = zoo.buscarAnimalPorCodigo(codigo);
+
+                    if (animal != null) {
+                        System.out.println("Animal encontrado:");
+                        System.out.println(animal);
+                    } else {
+                        System.out.println("No se encontró ningún animal con el código proporcionado.");
+                    }
                 }
 
-                Animal animal = zoo.buscarAnimalPorCodigo(codigo);
-
-                if (animal != null) {
-                    System.out.println(animal);
-                } else {
-                    System.out.println("Animal no encontrado.");
-                }
+               
 
             } else if (opcion == AGREGAR) {
                 // Agregar ejemplares a un animal

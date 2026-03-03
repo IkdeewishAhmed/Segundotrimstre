@@ -7,7 +7,7 @@ package ProgramacionObject.PT5;
  * identification code, quantity, and price. It provides getters and setters 
  * for all attributes and a formatted string representation.
  * 
- * @author [Your Name]
+ * @author [AHMED IKDEEWISH]
  * @version 1.0
  */
 public class Animal {
@@ -50,7 +50,7 @@ public class Animal {
      */
     @Override
     public String toString() {
-        return String.format("Código: %s | Nombre: %s | Cantidad: %d | Precio: %.2f €",
+        return String.format("Código: %s | Nombre: %s | Cantidad: %d | Precio: %.2f " + "€",
                 codigo, nombre, cantidad, precio);
     }
 
