@@ -1,0 +1,23 @@
+{
+  "personas": [
+    {
+      "id": 1,
+      "nombre": "Ana García",
+      "edad": 28,
+      "coches": [
+        { "id": 1, "marca": "Toyota", "modelo": "Corolla", "año": 2019 },
+        { "id": 2, "marca": "Seat", "modelo": "Ibiza", "año": 2021 }
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Carlos López",
+      "edad": 35,
+      "coches": [
+        { "id": 1, "marca": "BMW", "modelo": "Serie 3", "año": 2020 },
+        { "id": 2, "marca": "Volkswagen", "modelo": "Golf", "año": 2018 },
+        { "id": 3, "marca": "Audi", "modelo": "A4", "año": 2022 }
+      ]
+    }
+  ]
+}
