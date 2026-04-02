@@ -1,23 +1,58 @@
 {
   "personas": [
     {
-      "id": 1,
-      "nombre": "Ana García",
-      "edad": 28,
+      "id": "1",
+      "nombre": "Carlos García",
+      "edad": 25,
       "coches": [
-        { "id": 1, "marca": "Toyota", "modelo": "Corolla", "año": 2019 },
-        { "id": 2, "marca": "Seat", "modelo": "Ibiza", "año": 2021 }
+        {
+          "marca": "Toyota",
+          "modelo": "Corolla",
+          "año": 2018
+        },
+        {
+          "marca": "Ford",
+          "modelo": "Focus",
+          "año": 2020
+        }
       ]
     },
     {
-      "id": 2,
-      "nombre": "Carlos López",
+      "id": "2",
+      "nombre": "Laura Martínez",
       "edad": 35,
       "coches": [
-        { "id": 1, "marca": "BMW", "modelo": "Serie 3", "año": 2020 },
-        { "id": 2, "marca": "Volkswagen", "modelo": "Golf", "año": 2018 },
-        { "id": 3, "marca": "Audi", "modelo": "A4", "año": 2022 }
+        {
+          "marca": "BMW",
+          "modelo": "Serie 3",
+          "año": 2021
+        }
+      ]
+    },
+    {
+      "id": "4uK2HsCH98M",
+      "nombre": "Pedro Lopez",
+      "edad": 40,
+      "coches": [
+        {
+          "marca": "Seat",
+          "modelo": "Ibiza",
+          "ano": 2019
+        }
+      ]
+    },
+    {
+      "id": "q0_3HjlWyHg",
+      "nombre": "PLopez",
+      "edad": 40,
+      "coches": [
+        {
+          "marca": "Seat",
+          "modelo": "Ibiza",
+          "ano": 2019
+        }
       ]
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
