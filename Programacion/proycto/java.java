@@ -21,3 +21,27 @@
             System.out.println("No seats occupied yet for screening \"" + code + "\".");
         }
     }
+
+
+
+         public void findCustomerBySeat(int row, char col){
+         int rowIndex = row - 1;
+        int colIndex = col - 'A';
+    
+        if (rowIndex < 0 || rowIndex >= rowSeats || colIndex < 0 || colIndex >= columnSeats) {
+            System.out.println("ERROR: Invalid seat position.");
+        }else{
+            if(seats[rowIndex][colIndex].getOccupied()){
+               
+                 System.out.println("  Seat " + seats[rowIndex][colIndex].getID() + " is occupied by");
+                  System.out
+                            .println( seats[rowIndex][colIndex].getCustomor()
+ );
+
+            }else{
+                
+                System.out.println("Seat " + seats[rowIndex][colIndex].getID() + " is empty");
+            }
+        }
+
+     }
