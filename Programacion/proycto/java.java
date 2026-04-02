@@ -45,3 +45,19 @@
         }
 
      }
+
+
+           public int getAvailableSeatsCount(){
+
+        int count = 0;
+        for (int r = 0; r < rowSeats; r++) {
+            for (int c = 0; c < columnSeats; c++) {
+                if (!seats[r][c].getOccupied()) {
+                    count++;
+                }
+            }
+        }
+       System.out.println("Available seats: " + getAvailableSeatsCount() + "/200");
+        return count;
+   
+      }
