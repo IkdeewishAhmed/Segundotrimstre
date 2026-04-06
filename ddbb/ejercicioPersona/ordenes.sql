@@ -101,3 +101,47 @@ If you delete a Cinema, all its Rooms get deleted automatically. If you delete a
 3. "What does UNIQUE KEY uq_asiento_proyeccion do?"
 
 It makes sure the same seat number cannot be sold twice for the same screening. It is a database-level guarantee on top of the trigger logic.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Step 1 — Open terminal and connect to MySQL
+bashmysql -u root -p
+It will ask for your password, type it and press Enter.
+
+Step 2 — Run your SQL file
+Once you're inside MySQL:
+sqlSOURCE /path/to/CineDB.sql;
+Or you can do it directly from terminal without entering MySQL first:
+bashmysql -u root -p < /path/to/CineDB.sql
+
+Step 3 — Run the stored procedure file
+bashmysql -u root -p < /path/to/comprar_entrada.sql
+
+Step 4 — Test buying a ticket
+Connect to MySQL and run:
+sqlUSE CineDB;
+
+CALL comprar_entrada('El Laberinto del Fauno', 'Cinepolis', '2025-06-01 18:00:00', 8.50, 0);
+
+Step 5 — Run the stats script
+First give it permission to execute:
+bashchmod +x stats_semanales.sh
+Then run it:
+bash./stats_semanales.sh
+
+Useful commands once inside MySQL
+sqlSHOW DATABASES;        -- see all databases
+USE CineDB;            -- select your database
+SHOW TABLES;           -- see all tables
+SELECT * FROM Cine;    -- see data in a table
+SHOW TRIGGERS;
