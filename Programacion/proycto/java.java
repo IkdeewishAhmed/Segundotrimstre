@@ -57,7 +57,8 @@
                 }
             }
         }
-       System.out.println("Available seats: " + getAvailableSeatsCount() + "/200");
+       
         return count;
    
       }
+      //  in main System.out.println("Available seats: " + screening.getAvailableSeatsCount() + "/200");
