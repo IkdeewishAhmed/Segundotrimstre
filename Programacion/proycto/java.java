@@ -1,5 +1,5 @@
 
-    public void showOccupiedSeats() {
+public void showOccupiedSeats() {
 
         boolean anyOccupied = false;
 
@@ -88,3 +88,5 @@ public String toString() {
 public double getOccupancyPercentage() {
     return (getAttendeeCount() * 100.0) / (rowSeats * columnSeats);
 }
+
+System.out.println("Occupied: " + getAttendeeCount() + "/200 | Available: " + getAvailableSeatsCount() + "/200 | Occupancy: " + String.format("%.1f", getOccupancyPercentage()) + "%");
