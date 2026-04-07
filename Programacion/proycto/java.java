@@ -62,3 +62,29 @@
    
       }
       //  in main System.out.println("Available seats: " + screening.getAvailableSeatsCount() + "/200");
+
+      In Proyecciones.java — a new method getMinutesRemaining():
+javapublic long getMinutesRemaining(LocalDateTime now) {
+    if (now == null || !isInProgress(now)) {
+        return -1;
+    }
+    return java.time.Duration.between(now, endTime).toMinutes();
+}
+In Proyecciones.toString() — update it to show minutes remaining if in progress:
+java@Override
+public String toString() {
+    String extra = "";
+    if (isInProgress(LocalDateTime.now())) {
+        extra = " | ⏳ " + getMinutesRemaining(LocalDateTime.now()) + " min remaining";
+    }
+    return "[" + code + "] " + movieTitle
+            + " | Start: " + startTime.format(FORMATTER)
+            + " | End: " + endTime.format(FORMATTER)
+            + " | Attendees: " + getAttendeeCount()
+            + extra;
+}
+
+
+public double getOccupancyPercentage() {
+    return (getAttendeeCount() * 100.0) / (rowSeats * columnSeats);
+}
