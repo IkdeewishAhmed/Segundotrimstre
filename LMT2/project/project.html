@@ -306,3 +306,150 @@ javascriptasync function buscarPersonaje(orden = "asc") {
                 <h3>${p.name}</h3>
             </div>`).join("");
 }
+
+
+
+Almost certain asks (from R1/R2 — dataset + DOM)
+1. Filter characters by species (exactly like filter by position in R1 and filter by section in R2)
+
+"I want to filter characters by species"
+
+javascriptdocument.getElementById("filtroPosicion")?.addEventListener("change", function() {
+    const valor = this.value;
+    document.querySelectorAll(".card").forEach(card => {
+        if (valor === "todas" || card.dataset.especie === valor) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+});
+Add data-especie to your cards in HTML:
+html<article class="card" data-id="rick" data-especie="Human">
+Add select in HTML:
+html<select id="filtroPosicion">
+    <option value="todas">Todas</option>
+    <option value="Human">Humano</option>
+    <option value="Alien">Alien</option>
+</select>
+
+2. Click on card to show details panel (exactly like R1 exercise 2 and R2 exercise 1)
+
+"When I click a card I want to see its details somewhere on the page"
+
+javascriptdocument.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("click", function() {
+        // remove selected from all
+        document.querySelectorAll(".card").forEach(c => c.classList.remove("seleccionado"));
+        // add to clicked
+        this.classList.add("seleccionado");
+
+        // show details
+        const id = this.dataset.id;
+        const datos = personajes[id];
+        document.getElementById("panel-nombre").textContent = datos.nombre;
+        document.getElementById("panel-especie").textContent = datos.especie;
+        document.getElementById("panel-estado").textContent = datos.estado;
+    });
+});
+Add panel in HTML:
+html<div id="panelDetalles">
+    <p id="panel-nombre"></p>
+    <p id="panel-especie"></p>
+    <p id="panel-estado"></p>
+</div>
+
+3. Delete selected character (exactly like R1 exercise 6)
+
+"I want a button to remove a character from the page"
+
+javascriptdocument.getElementById("btnBorrar")?.addEventListener("click", function() {
+    const seleccionada = document.querySelector(".card.seleccionado");
+    if (!seleccionada) {
+        alert("Select a character first!");
+        return;
+    }
+    const confirmar = confirm("Are you sure you want to delete this character?");
+    if (!confirmar) return;
+    seleccionada.remove();
+    actualizarContador();
+});
+Add button in HTML:
+html<button id="btnBorrar" class="btn">Delete selected</button>
+
+4. Add character with a form (exactly like R1 exercise 5 and R2 exercise 5)
+
+"I want to add a new character card from a form"
+
+javascriptdocument.getElementById("formNuevoPersonaje")?.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const nombre = document.getElementById("input-nombre").value.trim();
+    const especie = document.getElementById("input-especie").value.trim();
+
+    if (!nombre || !especie) {
+        alert("Fill in all fields!");
+        return;
+    }
+
+    const nuevaTarjeta = document.createElement("article");
+    nuevaTarjeta.classList.add("card");
+    nuevaTarjeta.dataset.id = nombre.toLowerCase();
+    nuevaTarjeta.dataset.especie = especie;
+
+    nuevaTarjeta.innerHTML = `
+        <div class="card__body">
+            <h2 class="card__title">${nombre}</h2>
+            <p class="card__meta">Especie: ${especie}</p>
+            <button class="btn btn--fav" onclick="toggleFavorito(this)">Añadir a favoritos</button>
+        </div>`;
+
+    document.querySelector(".grid").appendChild(nuevaTarjeta);
+    this.reset();
+});
+Add form in HTML:
+html<form id="formNuevoPersonaje">
+    <input type="text" id="input-nombre" placeholder="Nombre" />
+    <input type="text" id="input-especie" placeholder="Especie" />
+    <button type="submit" class="btn">Add character</button>
+</form>
+
+🟠 From the API practice (fetch)
+5. Show more info from API search (exactly like REST Countries exercise 1)
+
+"Show more fields when searching a character"
+
+javascript// inside renderizarPersonaje() add more fields:
+document.getElementById(zonaId).innerHTML = `
+    <div class="api-card">
+        <img src="${personaje.image}" alt="${personaje.name}" />
+        <div>
+            <h3>${personaje.name}</h3>
+            <p><strong>Especie:</strong> ${personaje.species}</p>
+            <p><strong>Estado:</strong> ${personaje.status}</p>
+            <p><strong>Origen:</strong> ${personaje.origin.name}</p>
+            <p><strong>Género:</strong> ${personaje.gender}</p>
+            <p><strong>Episodios:</strong> ${personaje.episode.length}</p>
+        </div>
+    </div>`;
+6. Better error handling (exactly like REST Countries exercise 6)
+
+"Show a proper error message for each case"
+
+javascriptasync function buscarPersonaje() {
+    const input = document.getElementById("busqueda-personaje").value.trim();
+    
+    if (!input) {
+        document.getElementById("error-busqueda").textContent = "⚠️ Write a name or id first";
+        return;
+    }
+
+    document.getElementById("resultado-busqueda").innerHTML = "⏳ Loading...";
+    document.getElementById("error-busqueda").textContent = "";
+
+    try {
+        // ... your existing fetch code
+    } catch {
+        document.getElementById("resultado-busqueda").innerHTML = "";
+        document.getElementById("error-busqueda").textContent = "❌ Character not found";
+    }
+}
