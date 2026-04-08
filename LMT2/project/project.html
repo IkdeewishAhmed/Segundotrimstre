@@ -453,3 +453,60 @@ javascriptasync function buscarPersonaje() {
         document.getElementById("error-busqueda").textContent = "❌ Character not found";
     }
 }
+
+🎯 Contador related asks
+1. Change what the counter shows
+
+"Instead of just a number, show it differently"
+
+javascriptfunction actualizarContador() {
+    const contadorEl = document.getElementById("contador-favoritos");
+    if (!contadorEl) return;
+
+    const total = document.querySelectorAll(".card--favorita").length;
+    
+    // instead of just a number, more descriptive
+    if (total === 0) {
+        contadorEl.textContent = "No tienes favoritos aún";
+    } else if (total === 1) {
+        contadorEl.textContent = "Tienes 1 personaje favorito";
+    } else {
+        contadorEl.textContent = `Tienes ${total} personajes favoritos`;
+    }
+}
+
+2. Change counter color depending on number
+
+"Make the counter change color when you add favorites"
+
+javascriptfunction actualizarContador() {
+    const contadorEl = document.getElementById("contador-favoritos");
+    if (!contadorEl) return;
+
+    const total = document.querySelectorAll(".card--favorita").length;
+    contadorEl.textContent = "Personajes destacados: " + total;
+
+    // change color based on total
+    if (total === 0) contadorEl.style.color = "gray";
+    if (total === 1) contadorEl.style.color = "orange";
+    if (total >= 2) contadorEl.style.color = "green";
+}
+
+3. Counter with max limit warning
+
+"Show a warning in the counter when you reach the max"
+
+javascriptfunction actualizarContador() {
+    const contadorEl = document.getElementById("contador-favoritos");
+    if (!contadorEl) return;
+
+    const total = document.querySelectorAll(".card--favorita").length;
+    
+    if (total >= 3) {
+        contadorEl.textContent = `⚠️ Máximo alcanzado: ${total}/3 favoritos`;
+        contadorEl.style.color = "red";
+    } else {
+        contadorEl.textContent = `Personajes destacados: ${total}/3`;
+        contadorEl.style.color = "green";
+    }
+}
