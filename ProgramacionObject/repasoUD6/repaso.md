@@ -16,7 +16,7 @@ Cuenta cuántas veces escribes estas palabras clave con `public`:
 |---|---|
 | `public class X` | `X.java` |
 | `public abstract class X` | `X.java` |
-| `public interface X` | `X.java` |
+| `public interface X`  `X.java` |
 | `public enum X` | `X.java` |
 
 **Número de archivos = número de `public class` / `public interface` que tienes.**
